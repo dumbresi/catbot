@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <nav className="bg-gray-600 p-4">
+      <nav className="bg-[#f56c6c] p-4">
         <div className="container mx-auto">
           <h1 className="text-white text-2xl font-bold">CatConnection</h1>
         </div>
