@@ -53,6 +53,8 @@ export default function Home() {
     document.body.appendChild(script);
   }, []);
 
+  // ... existing code ...
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
@@ -69,17 +71,44 @@ export default function Home() {
             Help Cats Find Their Forever Home
           </h2>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              Adopt a Cat
-            </button>
-            <button className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors">
-              Foster a Cat
-            </button>
-            <button className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors">
-              Volunteer
-            </button>
+          
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/res/cat1.jpg" 
+                alt="Adoptable cat" 
+                className="w-full h-84 object-cover"
+              />
+              <div className="p-4 bg-gray-50">
+                <h3 className="text-lg font-semibold">Looking for Home</h3>
+              </div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/res/cat2.jpg" 
+                alt="Foster cat" 
+                className="w-full h-84 object-cover"
+              />
+              <div className="p-4 bg-gray-50">
+                <h3 className="text-lg font-semibold">Need Fostering</h3>
+              </div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/res/cat3.jpg" 
+                alt="Shelter cat" 
+                className="w-full h-84 object-cover"
+              />
+              <div className="p-4 bg-gray-50">
+                <h3 className="text-lg font-semibold">Adopt a Cat</h3>
+              </div>
+            </div>
           </div>
+          <div className="flex justify-center mt-8">
+          <p className="text-gray-600 mb-8">Click on the cat connection bot icon to use the chatbot</p>
+          </div>
+          
         </div>
       </main>
     </div>
