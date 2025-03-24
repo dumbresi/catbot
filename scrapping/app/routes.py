@@ -1,6 +1,6 @@
 from flask import request, jsonify
-from scrapping import app
-from scrapping.scraper import get_cat_data
+from scrapping.app import app
+from scrapping.app.scraper import get_cat_data
 
 @app.route('/get_cat_info', methods=['GET'])
 

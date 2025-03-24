@@ -2,4 +2,4 @@ from flask import Flask
 
 app = Flask(__name__)
 
-from scrapping import routes
+from scrapping.app import routes
