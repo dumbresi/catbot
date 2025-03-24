@@ -13,7 +13,6 @@ image_elements = driver.find_elements(By.CLASS_NAME, "petfinder-big-img")
 image_urls = [img.get_attribute("src") for img in image_elements]
 # players = driver.find_elements(By.XPATH, '//td[@class="name"]')
 cat_list = []
-cat_images=[]
 for p in range(len(cats)):
    cat_list.append(cats[p].text)
 
