@@ -24,12 +24,18 @@ export default async function handler(req, res) {
             waitUntil: 'domcontentloaded'
         });
 
+        // Wait for the images to load on the page
+        await page.waitForSelector('.petfinder-big-img img', { timeout: 5000 });
+
+        // Get cat names
         const cats = await page.evaluate(() => {
             return Array.from(document.querySelectorAll('h2.name')).map(cat => cat.textContent.trim());
         });
 
+        // Get image URLs
         const images = await page.evaluate(() => {
-            return Array.from(document.querySelectorAll('.petfinder-big-img img')).map(img => img.src);
+            const imgElements = Array.from(document.querySelectorAll('.petfinder-big-img img'));
+            return imgElements.map(img => img.getAttribute('src'));
         });
 
         await browser.close();
