@@ -24,8 +24,8 @@ export default async function handler(req, res) {
             waitUntil: 'domcontentloaded'
         });
 
-        // Wait for the images to load on the page
-        await page.waitForSelector('.petfinder-big-img img', { timeout: 5000 });
+        // Increase the timeout to 10 seconds and handle lazy loading
+        await page.waitForSelector('.images img.petfinder-big-img', { timeout: 10000 });
 
         // Get cat names
         const cats = await page.evaluate(() => {
@@ -34,9 +34,12 @@ export default async function handler(req, res) {
 
         // Get image URLs
         const images = await page.evaluate(() => {
-            const imgElements = Array.from(document.querySelectorAll('.petfinder-big-img img'));
+            const imgElements = Array.from(document.querySelectorAll('.images img.petfinder-big-img'));
             return imgElements.map(img => img.getAttribute('src'));
         });
+
+        console.log('Cats:', cats);
+        console.log('Images:', images);
 
         await browser.close();
 
