@@ -1,5 +1,4 @@
 {
-    "runtime": "nodejs18.x",
     "functions": {
       "api/get_cat_info.js": {
         "memory": 512,
